@@ -1,0 +1,131 @@
+/* Fonts loaded via index.html <link> for non-blocking render */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 201 98% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 201 98% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 201 98% 16%;
+
+    --primary: 43 67% 44%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 201 40% 92%;
+    --secondary-foreground: 201 98% 16%;
+
+    --muted: 210 10% 93%;
+    --muted-foreground: 60 1% 42%;
+
+    --accent: 201 98% 16%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 10% 88%;
+    --input: 210 10% 88%;
+    --ring: 43 67% 44%;
+
+    --radius: 0.375rem;
+
+    --gold: 43 67% 44%;
+    --gold-light: 50 78% 65%;
+    --navy: 201 98% 16%;
+    --navy-light: 201 50% 30%;
+    --surface-elevated: 210 10% 96%;
+    --surface-glass: 0 0% 100%;
+    --surface-warm: 40 38% 62%;
+    --text-subtle: 60 1% 42%;
+    --divider: 210 10% 90%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 201 98% 16%;
+    --sidebar-primary: 43 67% 44%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 10% 96%;
+    --sidebar-accent-foreground: 201 98% 16%;
+    --sidebar-border: 210 10% 88%;
+    --sidebar-ring: 43 67% 44%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Montserrat', 'Segoe UI', Roboto, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Rajdhani', sans-serif;
+    color: hsl(var(--navy));
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(43, 67%, 44%), hsl(50, 78%, 65%), hsl(43, 67%, 44%));
+  }
+
+  .font-subtitle {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .border-gold-subtle {
+    border-color: hsl(43, 67%, 44%, 0.25);
+  }
+
+  .bg-surface-elevated {
+    background-color: hsl(var(--surface-elevated));
+  }
+
+  .bg-surface-glass {
+    background-color: hsl(var(--surface-glass) / 0.9);
+    backdrop-filter: blur(12px);
+  }
+
+  .text-subtle {
+    color: hsl(var(--text-subtle));
+  }
+
+  .text-navy {
+    color: hsl(var(--navy));
+  }
+
+  .bg-navy {
+    background-color: hsl(var(--navy));
+  }
+
+  .bg-surface-warm {
+    background-color: hsl(var(--surface-warm));
+  }
+
+  .divider-gold {
+    background: linear-gradient(90deg, transparent, hsl(43, 67%, 44%, 0.4), transparent);
+    height: 1px;
+  }
+
+  .shadow-gold {
+    box-shadow: 0 4px 30px -8px hsl(43, 67%, 44%, 0.25);
+  }
+
+  .glow-line {
+    background: linear-gradient(90deg, transparent, hsl(43, 67%, 44%, 0.4), transparent);
+    height: 1px;
+  }
+}
