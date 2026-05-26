@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo-protechx-sem-fundo.png";
 
 const sectionLinks = [
@@ -45,26 +45,38 @@ const Navbar = () => {
       }`}
     >
       <div className="container px-6 flex items-center justify-between h-16 md:h-20">
-        <a href="/" className="flex-shrink-0">
+        <Link to="/" className="flex-shrink-0">
           <img src={logo} alt="ProtechX" className="h-10 md:h-12 object-contain" />
-        </a>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {sectionLinks.map((link) => (
-            <a
-              key={link.label}
-              href={getLinkHref(link)}
-              className={`text-sm font-medium ${textClass} transition-colors tracking-wide`}
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href="/planos"
+          {sectionLinks.map((link) => {
+            const href = getLinkHref(link);
+            const isInternal = href.startsWith("/") && !href.startsWith("/#");
+            return isInternal ? (
+              <Link
+                key={link.label}
+                to={href}
+                className={`text-sm font-medium ${textClass} transition-colors tracking-wide`}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.label}
+                href={href}
+                className={`text-sm font-medium ${textClass} transition-colors tracking-wide`}
+              >
+                {link.label}
+              </a>
+            );
+          })}
+          <Link
+            to="/planos"
             className={`text-sm font-medium ${textClass} transition-colors tracking-wide`}
           >
             Planos
-          </a>
+          </Link>
           <a
             href="https://wa.me/5511934529229?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas!"
             target="_blank"
@@ -95,23 +107,36 @@ const Navbar = () => {
             className="md:hidden bg-background border-b border-border overflow-hidden"
           >
             <div className="container px-6 py-6 flex flex-col gap-4">
-              {sectionLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={getLinkHref(link)}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-sm font-medium text-foreground/80 hover:text-foreground py-2"
-                >
-                  {link.label}
-                </a>
-              ))}
-              <a
-                href="/planos"
+              {sectionLinks.map((link) => {
+                const href = getLinkHref(link);
+                const isInternal = href.startsWith("/") && !href.startsWith("/#");
+                return isInternal ? (
+                  <Link
+                    key={link.label}
+                    to={href}
+                    onClick={() => setMobileOpen(false)}
+                    className="text-sm font-medium text-foreground/80 hover:text-foreground py-2"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.label}
+                    href={href}
+                    onClick={() => setMobileOpen(false)}
+                    className="text-sm font-medium text-foreground/80 hover:text-foreground py-2"
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
+              <Link
+                to="/planos"
                 onClick={() => setMobileOpen(false)}
                 className="text-sm font-medium text-foreground/80 hover:text-foreground py-2"
               >
                 Planos
-              </a>
+              </Link>
               <a
                 href="https://wa.me/5511934529229?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas!"
                 target="_blank"
