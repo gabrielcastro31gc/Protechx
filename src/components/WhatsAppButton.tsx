@@ -72,7 +72,14 @@ const WhatsAppButton = () => {
                 {quickQuestions.map((q, i) => (
                   <button
                     key={i}
-                    onClick={() => sendMessage(q)}
+                    onClick={() => {
+                      trackCTA("whatsapp_chat");
+                      window.open(
+                        "https://wa.me/5511934529229?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas!",
+                        "_blank"
+                      );
+                      setOpen(false);
+                    }}
                     className="w-full text-left text-sm px-3 py-2 rounded-lg border border-[hsl(142,70%,40%)]/30 bg-white hover:bg-[hsl(142,70%,95%)] hover:border-[hsl(142,70%,40%)]/60 transition-all text-foreground"
                   >
                     {q}

@@ -66,7 +66,7 @@ const Navbar = () => {
             Planos
           </a>
           <a
-            href="https://wa.me/5511934529229?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista."
+            href="https://wa.me/5511934529229?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas!"
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2.5 bg-accent text-accent-foreground text-xs font-semibold uppercase tracking-wider rounded hover:opacity-90 transition-all"
@@ -113,7 +113,7 @@ const Navbar = () => {
                 Planos
               </a>
               <a
-                href="https://wa.me/5511934529229?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista."
+                href="https://wa.me/5511934529229?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas!"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}
