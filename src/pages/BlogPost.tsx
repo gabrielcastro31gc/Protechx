@@ -209,7 +209,7 @@ const BlogPost = () => {
               Receba um diagnóstico gratuito da gestão financeira da sua empresa.
             </p>
             <a
-              href={`https://wa.me/5500000000000?text=${encodeURIComponent(`Olá! Li o artigo "${post.title}" e quero saber mais sobre gestão financeira.`)}`}
+              href="https://api.whatsapp.com/send/?phone=5511934529229&text=Olá%2C+vim+do+site+e+gostaria+de+tirar+algumas+dúvidas%21&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-[hsl(142,70%,40%)] text-white font-bold px-8 py-4 rounded-xl text-lg hover:brightness-110 transition-all shadow-lg"
